@@ -63,13 +63,10 @@ var estiloRoteiro = {
 };
 
 function callApi(messages, onSuccess, onError) {
-  var key = process.env.REACT_APP_ANTHROPIC_KEY;
-  fetch("https://api.anthropic.com/v1/messages", {
+  fetch("/api/luna", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json",
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
